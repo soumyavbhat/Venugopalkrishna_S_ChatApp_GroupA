@@ -8,6 +8,7 @@
   nameInput = document.querySelector('.nickname'),
   nickName = null;
 
+
   function setNickname()
   {
     nickName = this.value;
@@ -25,10 +26,14 @@
   // debugger;
   }
 
+
 function appendMessage(msg)
 {
   // debugger;
-  let newMsg = `<li>${msg.message}</li>`;//getting the message froms erver
+  let d = new Date();
+  let time =  d.getHours() + ":" + d.getMinutes() ;
+  let newMsg = `<li>${msg.message}<br><br>Sent at: ${time}</li>`;//getting the message froms erver
+
   messageList.innerHTML += newMsg;
 }
 
