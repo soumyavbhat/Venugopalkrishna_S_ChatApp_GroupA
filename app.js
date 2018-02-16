@@ -19,8 +19,12 @@ const server = app.listen(3000, ()=> {
 
 io.attach(server);
 
+
 io.on('connection', socket => { //function (socket) {...}
-  console.log('a user has connected');
+var d = new Date();
+var time = "[" + d.getHours() + ":" + d.getMinutes() + ":" + d.getSeconds() + "]";
+
+  console.log(time, 'a user has connected');
   io.emit('chat message', {for : 'everyone', message : `${socket.id} is here!`});
 
   socket.on('chat message', msg => {
@@ -28,7 +32,10 @@ io.on('connection', socket => { //function (socket) {...}
   });
 
   socket.on('disconnect',()=>{
-    console.log('a user is disconnected');
+    var d = new Date();
+    var time = "[" + d.getHours() + ":" + d.getMinutes() + ":" + d.getSeconds() + "]";
+
+    console.log(time, 'a user is disconnected');
     io.emit('disconnect message',`${socket.id} has left!`);
   });
 });
