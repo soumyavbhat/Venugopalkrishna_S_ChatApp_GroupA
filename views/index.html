@@ -4,14 +4,27 @@
 	<meta charset="UTF-8">
 	<title>Socket IO Chat with Node!</title>
 	<link rel="stylesheet" href="css/main.css">
+	<link href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+	<link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
 </head>
-<body>
-	<input type="text" class="nickname" placeholder="What is your nickname?">
-	<ul id="messages"></ul>
-	<form>
-		<input class="message" type="text" id="m" autocomplete="off">
-		<button>send</button>
-	</form>
+<body >
+  <div class="chat">
+  <div class="topBar">
+  		<h1> CHATAPP</h1>
+  </div>
+  <div class="username">
+      <h3>Enter a Username or Nickname</h3> <br>
+      <input type="text" class="nickname" >
+      <ul id="messages"></ul>
+
+</div>
+
+</div>
+<form class="submission">
+	<input class="message" type="text" id="m" autocomplete="off" placeholder="Enter message here">
+	<button><i class="fas fa-paper-plane"></i></button>
+</form>
+
   <script src="/socket.io/socket.io.js"></script>
   <script src="js/main.js"></script>
 </body>
